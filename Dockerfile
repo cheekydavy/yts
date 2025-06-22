@@ -1,4 +1,4 @@
-# YouTube Search API Service
+# YouTube Search API Service - Fixed for Fly.io
 FROM node:18-alpine
 
 # Install system dependencies
@@ -12,8 +12,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install dependencies (use npm install instead of npm ci)
+RUN npm install --only=production && npm cache clean --force
 
 # Copy application code
 COPY server.js ./
