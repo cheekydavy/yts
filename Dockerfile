@@ -1,5 +1,5 @@
 # YouTube Search API Service - Fixed for Fly.io
-FROM node:20
+FROM node:20-alpine
 
 # Install system dependencies
 RUN apk add --no-cache \
